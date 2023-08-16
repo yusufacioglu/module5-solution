@@ -63,6 +63,7 @@ var switchMenuToActive = function () {
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
 
+
 // TODO: STEP 0: Look over the code from
 // *** start ***
 // to
@@ -84,8 +85,11 @@ showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML,
-  true); // Explicitly setting the flag to get JSON from server processed into an object literal// ***** <---- TODO: STEP 1: Substitute [...] ****** // Explicitly setting the flag to get JSON from server processed into an object literal
+  true);
 });
+
+  // Explicitly setting the flag to get JSON from server processed into an object literal// ***** <---- TODO: STEP 1: Substitute [...] ****** // Explicitly setting the flag to get JSON from server processed into an object literal
+
 // *** finish **
 
 
@@ -126,7 +130,7 @@ function buildAndShowHomeHTML (categories) {
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
-    }
+    };
 
 
 // Given array of category objects, returns a random category object.
@@ -136,7 +140,7 @@ function chooseRandomCategory (categories) {
 
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
-}
+};
 
 
 // Load the menu categories view
